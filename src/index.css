@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: IBM;
+  src: url(../public/Fonts/IBMPlexMono-Medium.ttf);
+}
+@font-face {
+  font-family: IBMBold;
+  src: url(../public/Fonts/IBMPlexMono-SemiBold.ttf);
+}
+@font-face {
+  font-family: IBMThin;
+  src: url(../public/Fonts/IBMPlexMono-Thin.ttf);
+}
+@font-face {
+  font-family: IBMReg;
+  src: url(../public/Fonts/IBMPlexMono-Regular.ttf);
+}
+@font-face {
+  font-family: IBMLight;
+  src: url(../public/Fonts/IBMPlexMono-Light.ttf);
+}
+.hamburger {
+  padding: 0px 0px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+/* .hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: black;
+} */
+
+.hamburger-box {
+  width: 40px;
+  height: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::after {
+  width: 40px;
+  height: 2px;
+  /* background-color: black; */
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+.hamburger--slider .hamburger-inner {
+  top: 0px;
+}
+
+.hamburger--slider .hamburger-inner::after {
+  top: 10px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(-45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  transform: translate3d(0, -10px, 0) rotate(90deg);
+}
